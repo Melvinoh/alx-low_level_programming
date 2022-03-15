@@ -30,7 +30,3 @@ void print_to_98(int n)
 		}
 	}
 }
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Secu
