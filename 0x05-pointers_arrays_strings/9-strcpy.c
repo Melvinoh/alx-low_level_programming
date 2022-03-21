@@ -20,7 +20,3 @@ char *_strcpy(char *dest, char *src)
 
 	return (dest);
 }
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
