@@ -1,12 +1,28 @@
 #include "main.h"
-/**
- * _strncpy - copies a string 
- * @dest: string to be coppied 
- * @src: coppied string 
- * @n number of bytes to copy
- * Return: pointer to the resulting string 
- */
-char *_strncpy(char *dest, char *src, int n)
-}
-	for (i=0 src != '\0' && i < n)
 
+/**
+ * leet - encodes a string in 1337
+ * @s: string to be encoded
+ *
+ * Return: the resulting string;
+ */
+char *leet(char *s)
+{
+	int i, j;
+
+	char *a = "aAeEoOtTlL";
+	char *b = "4433007711";
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		for (j = 0; j < 10; j++)
+		{
+			if (s[i] == a[j])
+			{
+				s[i] = b[j];
+			}
+		}
+	}
+
+	return (s);
+}
