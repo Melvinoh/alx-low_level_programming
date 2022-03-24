@@ -6,23 +6,19 @@
  *
  * Return: the resulting string;
  */
-char *leet(char *s)
+
+char *_strncpy(char *dest, char *src, int n)
 {
-	int i, j;
+	int index = 0, src_len = 0;
 
-	char *a = "aAeEoOtTlL";
-	char *b = "4433007711";
+	while (src[index++])
+		src_len++;
 
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		for (j = 0; j < 10; j++)
-		{
-			if (s[i] == a[j])
-			{
-				s[i] = b[j];
-			}
-		}
-	}
+	for (index = 0; src[index] && index < n; index++)
+		dest[index] = src[index];
 
-	return (s);
+	for (index = src_len; index < n; index++)
+		dest[index] = '\0';
+
+	return (dest);
 }
