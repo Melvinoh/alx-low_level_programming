@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "holberton.h"
 
 /**
@@ -11,6 +12,8 @@ void set_string(char **s, char *to)
 	*s = to;
 }
 =======
+=======
+>>>>>>> 47e14e7796523a18f42c33dcdc32ea7607f3f608
 #include "main.h"
 
 /**
