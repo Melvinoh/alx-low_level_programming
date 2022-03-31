@@ -7,25 +7,25 @@
  *
  * Return: 1 if prime, 0 if not
  */
-int is_prime_number(int n)
+int prime_check(int f, int p)
 {
-	if (n <= 1)
+	if (p < 2 || p % f == 0)
 		return (0);
-	return (actual_number(n,n - 1));
+	else if (f > p / 2)
+		return (1);
+	else
+		return (prime_check(f + 1, p));
 }
 
 /**
- * actual_prime - caculates if a number is prime recursively
- * @n: number to evaluate
- * @i: iterator
+ * is_prime_number - states if number is prime
+ * @n: number to check
  *
- * return: 1 if n is prime. 0 if not
+ * Return: 1 if prime, 0 if not
  */
-int actual_prime(int n, int i)
+int is_prime_number(int n)
 {
-	if (i == 1)
+	if (n == 2)
 		return (1);
-	if (n % i == 0 && i > 0)
-		return (0);
-	return (actual_prime(n, i - 1));
+	return (prime_check(2, n));
 }
