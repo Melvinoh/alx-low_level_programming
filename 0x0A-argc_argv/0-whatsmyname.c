@@ -1,17 +1,14 @@
 #include <stdio.h>
-/* intmain() program that prints its name and new line 
- * @argc: count for the number of arguments that a program recieve
- * @argv: array of arguments entered in program
+
+/**
+ * main - prints the name of the program
+ * @argc: number of arguments passed to the function
+ * @argv: argument vector of pointers to strings
+ *
+ * Return: always 0
  */
-
-int main(int argc, char *argv)
+int main(int argc __attribute__((unused)), char *argv[])
 {
-	int i;
-
-	for (i = 0; i < argc; i++)
-	{
-		argv[0] = argv[1];
-		retun (argv[1]);
-	}
-	putchar('\n');
+	printf("%s\n", argv[0]);
+	return (0);
 }
