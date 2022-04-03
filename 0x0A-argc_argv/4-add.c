@@ -1,23 +1,33 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
 /**
- * a program that writes positive numbers
- * int main(): adds arguments of positive numbers a
- * @argc; argument count 
- * @argv: an array for arguments
- * @i: incremental number
- * @sum: anser to int main
+ * main - adds numbers
+ * @argc: number of arguments passed to the function
+ * @argv: argument vector of pointers to strings
+ *
+ * Return: 0 if no errors, else 1
  */
-
-int main(int argc, char *argv)
+int main(int argc, char *argv[])
 {
-	int i;
-	int sum;
+	int a = 0, i, j;
 
-	for (i = 0; i < argc; i++)
+	for (i = 1; i < argc; i++)
 	{
-		sum += sum + argv[i];
-	
-		_putchar( argv[i]);
-		_putchar( sum);
+		for (j = 0; argv[i][j]; j++)
+		{
+			if (isdigit(argv[i][j]) == 0)
+			{
+				puts("Error");
+				return (1);
+			}
+		}
 	}
+	for (i = 1; i < argc; i++)
+	{
+		a += atoi(argv[i]);
+	}
+	printf("%d\n", a);
+	return (0);
 }
