@@ -1,26 +1,25 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 /**
- * a program that mutiplies two numbers
- * @argc:argument count
- * @argv: string of arguments
- * retun: always zero
+ * main - multiplies two numbers
+ * @argc: number of arguments passed to the function
+ * @argv: argument vector of pointers to strings
+ *
+ * Return: 0 if no errors, else 1
  */
-int main(int argc, char *argv);
+int main(int argc, char *argv[])
 {
-	int i;
-	float Ans;
+	int a, b, c;
 
-	for (i = 0; i < argc; i++)
+	if (argc != 3)
 	{
-		if ( i == 2)
-		{
-			sum = argv[1] * argv[2];
-			_putchar( sum);
-		}
-		else
-			_putchar(error);
+		puts("Error");
+		return (1);
 	}
-	_putchar('\n');
+	a = atoi(argv[1]);
+	b = atoi(argv[2]);
+	c = a * b;
+	printf("%d\n", c);
+	return (0);
 }
-
-	
