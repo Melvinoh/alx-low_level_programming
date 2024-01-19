@@ -1,16 +1,22 @@
 #include "main.h"
 /**
- * clear_bit - set a bit to 0
+ * flip_bits - count the bit to change to another value
  * @n: the number
- * @index: the position to set the bit
- * Description: set 1 bit to 0
+ * @m: the number to compare
+ * Description: compare to ints a count the diferences in bits
  * section header: the header of this function is holberton.h
- * Return: 1 in success -1 in fail
+ * Return: the number of different bits
  */
-int clear_bit(unsigned long int *n, unsigned int index)
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	if (index > 64)
-		return (-1);
-	*n &= ~(1 << index);
-	return (1);
+	int i;
+
+	i = 0;
+	n = n ^ m;
+	while (n)
+	{
+		i += n & 1;
+		n >>= 1;
+	}
+	return (i);
 }
