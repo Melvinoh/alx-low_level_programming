@@ -1,22 +1,17 @@
 #include "main.h"
 /**
- * flip_bits - count the bit to change to another value
- * @n: the number
- * @m: the number to compare
- * Description: compare to ints a count the diferences in bits
+ * get_endianness - get the endiannes of the arch
+ * Description: get the endiannes of the arch
  * section header: the header of this function is holberton.h
- * Return: the number of different bits
+ * Return: 1 in little indian - 0 in big indian.
  */
-unsigned int flip_bits(unsigned long int n, unsigned long int m)
-{
-	int i;
 
-	i = 0;
-	n = n ^ m;
-	while (n)
-	{
-		i += n & 1;
-		n >>= 1;
-	}
-	return (i);
+int get_endianness(void)
+{
+	unsigned int i = 1;
+	char *c = (char *)&i;
+
+	if (*c)
+		return (1);
+	return (0);
 }
